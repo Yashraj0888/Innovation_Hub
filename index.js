@@ -1,6 +1,5 @@
 
 const dropdownBtn = document.querySelectorAll(".button");
-// const dropdownBtn1 = document.querySelectorAll(".button");
 const addContent1=document.querySelector(".add_new1");
 const addContent2=document.querySelector(".add_new2");
 const addContent3=document.querySelector(".add_new3");
@@ -12,6 +11,7 @@ const dropdownContent3 = document.querySelector(".O3");
 const dropdownContent4 = document.querySelector(".O4");
 const dropdownContent5 = document.querySelector(".O5");
 
+//function for searching over the items of table to check wether inputed value exist or not
 
 const input = document.getElementById("searchInput");
       const table = document.getElementById("myTable");
@@ -31,6 +31,9 @@ const input = document.getElementById("searchInput");
           }
         }
       });
+
+//This iterates over list of classes named as ".button" to add the classlist for adding diffrent functionalities
+
 dropdownBtn.forEach(function(item){
     item.addEventListener('click',function(){
         let a=item.id
@@ -55,6 +58,9 @@ dropdownBtn.forEach(function(item){
         
     })
 })
+
+// Makes the dropdown menu disappear when clicked anywhere except the mentioned targets.
+
 window.addEventListener("click", function(event) {
     
     if (!event.target.matches('.button') 
@@ -86,7 +92,9 @@ window.addEventListener("click", function(event) {
         }
     }
 })
+
 // Function to add a new item to the list
+
 function addItem() {
     // Get the input field value
     var newItemText = document.getElementById("newItemText1").value;
@@ -104,71 +112,69 @@ function addItem() {
     document.getElementById("newItemText1").value = "";
 }
 function addItem1() {
-    // Get the input field value
+    
     var newItemText = document.getElementById("newItemText2").value;
   
-    // Create a new list item element
+    
     var newItem = document.createElement("li");
   
-    // Add the input field value as text content to the new list item
+   
     newItem.textContent = newItemText;
   
-    // Append the new list item to the list
+    
     document.getElementById("myList2").appendChild(newItem);
   
-    // Clear the input field after adding the item
+    
     document.getElementById("newItemText2").value = "";
 }
 function addItem2() {
-    // Get the input field value
+   
     var newItemText = document.getElementById("newItemText3").value;
   
-    // Create a new list item element
+    
     var newItem = document.createElement("li");
   
-    // Add the input field value as text content to the new list item
+    
     newItem.textContent = newItemText;
   
-    // Append the new list item to the list
+    
     document.getElementById("myList3").appendChild(newItem);
   
-    // Clear the input field after adding the item
+    
     document.getElementById("newItemText3").value = "";
 }
 
 function addItem3() {
-    // Get the input field value
+    
     var newItemText = document.getElementById("newItemText4").value;
   
-    // Create a new list item element
+    
     var newItem = document.createElement("li");
   
-    // Add the input field value as text content to the new list item
+   
     newItem.textContent = newItemText;
   
-    // Append the new list item to the list
     document.getElementById("myList4").appendChild(newItem);
   
-    // Clear the input field after adding the item
+    
     document.getElementById("newItemText4").value = "";
 }
 function addItem4() {
-    // Get the input field value
+    
     var newItemText = document.getElementById("newItemText5").value;
   
-    // Create a new list item element
     var newItem = document.createElement("li");
   
-    // Add the input field value as text content to the new list item
+    
     newItem.textContent = newItemText;
   
-    // Append the new list item to the list
+    
     document.getElementById("myList5").appendChild(newItem);
   
-    // Clear the input field after adding the item
+    
     document.getElementById("newItemText5").value = "";
 }
-
+//below code makes the add items display to none
 
 addContent1.addEventListener('click',()=>{
     document.querySelector(".addItems1").style.display="block"
